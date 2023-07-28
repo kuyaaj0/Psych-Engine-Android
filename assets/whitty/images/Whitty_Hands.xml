@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Whitty_Hands.png">
+	<SubTexture name="timeBar open0000" x="0" y="0" width="522" height="295" frameX="0" frameY="0" frameWidth="522" frameHeight="295" />
+	<SubTexture name="timeBar close0000" x="522" y="0" width="522" height="295" frameX="0" frameY="0" frameWidth="522" frameHeight="295" />
+	<SubTexture name="open0000" x="0" y="295" width="522" height="295" frameX="0" frameY="0" frameWidth="522" frameHeight="295" />
+	<SubTexture name="close0000" x="522" y="295" width="522" height="295" frameX="0" frameY="0" frameWidth="522" frameHeight="295" />
+</TextureAtlas>
