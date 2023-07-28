@@ -122,7 +122,7 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 
-		handSelect = new FlxSprite(1042, 590).loadGraphic(Paths.getPath('images/weeb/pixelUI/hand_textbox.png', IMAGE));
+		handSelect = new FlxSprite(1042, 590).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
 		handSelect.setGraphicSize(Std.int(handSelect.width * PlayState.daPixelZoom * 0.9));
 		handSelect.updateHitbox();
 		handSelect.visible = false;
@@ -145,7 +145,7 @@ class DialogueBox extends FlxSpriteGroup
 		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 		add(swagDialogue);
 
-		dialogue = new Alphabet(0, 80, "", false, true);
+		// dialogue = new Alphabet(0, 80, "", false, true);
 		// dialogue.x = 90;
 		// add(dialogue);
 	}
@@ -183,19 +183,7 @@ class DialogueBox extends FlxSpriteGroup
 			dialogueStarted = true;
 		}
 
-		#if mobile
-		var justTouched:Bool = false;
-
-		for (touch in FlxG.touches.list)
-		{
-			justTouched = false;
-			
-			if (touch.justReleased){
-				justTouched = true;
-			}
-		}
-		#end
-		if (FlxG.keys.justPressed.ANY #if mobile || justTouched #end)
+		if(PlayerSettings.player1.controls.ACCEPT)
 		{
 			if (dialogueEnded)
 			{

@@ -10,6 +10,13 @@ import editors.ChartingState;
 
 using StringTools;
 
+typedef EventNote = {
+	strumTime:Float,
+	event:String,
+	value1:String,
+	value2:String
+}
+
 class Note extends FlxSprite
 {
 	public var strumTime:Float = 0;
@@ -29,11 +36,13 @@ class Note extends FlxSprite
 	public var noteType(default, set):String = null;
 
 	public var eventName:String = '';
+	public var eventLength:Int = 0;
 	public var eventVal1:String = '';
 	public var eventVal2:String = '';
 
 	public var colorSwap:ColorSwap;
 	public var inEditor:Bool = false;
+	public var gfNote:Bool = false;
 	private var earlyHitMult:Float = 0.5;
 
 	public static var swagWidth:Float = 160 * 0.7;
@@ -60,12 +69,24 @@ class Note extends FlxSprite
 	public var copyAlpha:Bool = true;
 
 	public var hitHealth:Float = 0.023;
-	public var missHealth:Float = 0.09;
+	public var missHealth:Float = 0.0475;
 
 	public var texture(default, set):String = null;
 
 	public var noAnimation:Bool = false;
 	public var hitCausesMiss:Bool = false;
+	public var distance:Float = 2000;//plan on doing scroll directions soon -bb
+
+	public static var holdArrowScales:Map<String, Float> = [
+		'Future'	=> 0.565,
+		'Chip'		=> 0.565
+	];
+
+	public static var downScrollHoldEndOffset:Map<String, Float> = [
+		'Future'	=> -12.2,
+		'Chip'		=> 13
+	];
+
 
 	private function set_texture(value:String):String {
 		if(texture != value) {
@@ -93,11 +114,13 @@ class Note extends FlxSprite
 					if(isSustainNote) {
 						missHealth = 0.1;
 					} else {
-						missHealth = 0.6;
+						missHealth = 0.3;
 					}
 					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
+				case 'GF Sing':
+					gfNote = true;
 			}
 			noteType = value;
 		}
@@ -107,6 +130,7 @@ class Note extends FlxSprite
 		return value;
 	}
 
+	public var originalHeightForCalcs:Float = 6;
 	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false)
 	{
 		super();
@@ -193,9 +217,22 @@ class Note extends FlxSprite
 						prevNote.animation.play('redhold');
 				}
 
-				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05 * PlayState.songSpeed;
+				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05;
+				if(PlayState.instance != null)
+				{
+					prevNote.scale.y *= PlayState.instance.songSpeed;
+				}
+
 				if(PlayState.isPixelStage) {
 					prevNote.scale.y *= 1.19;
+				}
+				else {
+					var holdScale:Float = 1;
+					if(holdArrowScales.exists(ClientPrefs.noteSkin))
+					{
+						holdScale = holdArrowScales.get(ClientPrefs.noteSkin);
+					}
+					prevNote.scale.y *= holdScale;
 				}
 				prevNote.updateHitbox();
 				// prevNote.setGraphicSize();
@@ -215,6 +252,12 @@ class Note extends FlxSprite
 		if(prefix == null) prefix = '';
 		if(texture == null) texture = '';
 		if(suffix == null) suffix = '';
+
+		var coolswag:String = '';
+		if(ClientPrefs.noteSkin != 'Default')
+		{
+			coolswag = '-' + ClientPrefs.noteSkin.toLowerCase().replace(' ', '-');
+		}
 		
 		var skin:String = texture;
 		if(texture.length < 1) {
@@ -236,21 +279,22 @@ class Note extends FlxSprite
 		var blahblah:String = arraySkin.join('/');
 		if(PlayState.isPixelStage) {
 			if(isSustainNote) {
-				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'));
+				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS' + coolswag));
 				width = width / 4;
 				height = height / 2;
-				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
+				originalHeightForCalcs = height;
+				loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS' + coolswag), true, Math.floor(width), Math.floor(height));
 			} else {
-				loadGraphic(Paths.image('pixelUI/' + blahblah));
+				loadGraphic(Paths.image('pixelUI/' + blahblah + coolswag));
 				width = width / 4;
 				height = height / 5;
-				loadGraphic(Paths.image('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
+				loadGraphic(Paths.image('pixelUI/' + blahblah + coolswag), true, Math.floor(width), Math.floor(height));
 			}
 			setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 			loadPixelNoteAnims();
 			antialiasing = false;
 		} else {
-			frames = Paths.getSparrowAtlas(blahblah);
+			frames = Paths.getSparrowAtlas(blahblah + coolswag);
 			loadNoteAnims();
 			antialiasing = ClientPrefs.globalAntialiasing;
 		}
@@ -330,11 +374,14 @@ class Note extends FlxSprite
 		{
 			canBeHit = false;
 
-			if (strumTime <= Conductor.songPosition)
-				wasGoodHit = true;
+			if (strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * earlyHitMult))
+			{
+				if((isSustainNote && prevNote.wasGoodHit) || strumTime <= Conductor.songPosition)
+					wasGoodHit = true;
+			}
 		}
 
-		if (tooLate)
+		if (tooLate && !inEditor)
 		{
 			if (alpha > 0.3)
 				alpha = 0.3;
