@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="cuttinDeezeBalls.png">
+	<SubTexture name="shake0000" x="0" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0001" x="615" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0002" x="1230" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0003" x="1845" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0004" x="0" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0005" x="615" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0006" x="1230" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0007" x="1845" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0008" x="0" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0009" x="615" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0010" x="1230" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0011" x="1845" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0012" x="0" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0013" x="615" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0014" x="1230" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="shake0015" x="1845" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack0016" x="2460" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack0017" x="3075" y="0" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack0018" x="0" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack0019" x="615" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack0020" x="1230" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack0021" x="1845" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0000" x="2460" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0001" x="3075" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0002" x="2460" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0003" x="3075" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0004" x="2460" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0005" x="3075" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0006" x="2460" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0007" x="3075" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0008" x="2460" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="crack loop0009" x="3075" y="876" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="pose0000" x="0" y="1752" width="615" height="876" frameX="0" frameY="0" frameWidth="615" frameHeight="876" />
+	<SubTexture name="pose0001" x="615" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose0002" x="1430" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose0003" x="2245" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose0004" x="3060" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0000" x="2245" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0001" x="3060" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0002" x="2245" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0003" x="3060" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0004" x="2245" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0005" x="3060" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0006" x="2245" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0007" x="3060" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0008" x="2245" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0009" x="3060" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0010" x="2245" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="pose loop0011" x="3060" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes0000" x="3875" y="1752" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes0000" x="0" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes0001" x="815" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes0002" x="1630" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes0003" x="2445" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes0004" x="3260" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes0005" x="4075" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0000" x="0" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0001" x="815" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0002" x="0" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0003" x="815" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0004" x="1630" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0005" x="2445" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0006" x="3260" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0007" x="4075" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0008" x="0" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0009" x="815" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0010" x="0" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0011" x="815" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0012" x="1630" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0013" x="2445" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0014" x="3260" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0015" x="4075" y="2628" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0016" x="0" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="eyes loop0017" x="815" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set0000" x="1630" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set0001" x="2445" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set0002" x="3260" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set0003" x="4075" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set0004" x="0" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set0005" x="4075" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0000" x="0" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0001" x="4075" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0002" x="0" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0003" x="4075" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0004" x="0" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0005" x="4075" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0006" x="0" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0007" x="4075" y="3504" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="set loop0008" x="0" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0000" x="815" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0001" x="1630" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0002" x="2445" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0003" x="3260" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0004" x="4075" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0005" x="815" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0006" x="1630" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0007" x="2445" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0008" x="3260" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0009" x="4075" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0010" x="815" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0011" x="1630" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0012" x="2445" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0013" x="3260" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic0014" x="4075" y="4380" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0000" x="0" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0001" x="815" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0002" x="0" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0003" x="815" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0004" x="0" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0005" x="815" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0006" x="0" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0007" x="815" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0008" x="0" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="ballistic loop0009" x="815" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="scream0000" x="1630" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="scream0001" x="2445" y="5256" width="815" height="876" frameX="0" frameY="0" frameWidth="815" frameHeight="876" />
+	<SubTexture name="scream0002" x="3260" y="5256" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream0003" x="4145" y="5256" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream0004" x="0" y="6132" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream0005" x="885" y="6132" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0000" x="3260" y="5256" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0001" x="4145" y="5256" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0002" x="0" y="6132" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0003" x="885" y="6132" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0004" x="3260" y="5256" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0005" x="4145" y="5256" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0006" x="0" y="6132" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0007" x="885" y="6132" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0008" x="3260" y="5256" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0009" x="4145" y="5256" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0010" x="0" y="6132" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+	<SubTexture name="scream loop0011" x="885" y="6132" width="885" height="876" frameX="0" frameY="0" frameWidth="885" frameHeight="876" />
+</TextureAtlas>

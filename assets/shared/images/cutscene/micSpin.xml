@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="micSpin.png">
+	<SubTexture name="still0000" x="0" y="0" width="245" height="218" frameX="0" frameY="0" frameWidth="245" frameHeight="218" />
+	<SubTexture name="spin0000" x="245" y="0" width="245" height="218" frameX="0" frameY="0" frameWidth="245" frameHeight="218" />
+	<SubTexture name="spin0001" x="0" y="218" width="245" height="218" frameX="0" frameY="0" frameWidth="245" frameHeight="218" />
+	<SubTexture name="spin0002" x="245" y="218" width="245" height="218" frameX="0" frameY="0" frameWidth="245" frameHeight="218" />
+	<SubTexture name="spin0003" x="0" y="436" width="245" height="218" frameX="0" frameY="0" frameWidth="245" frameHeight="218" />
+</TextureAtlas>
