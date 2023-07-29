@@ -1,1 +1,0 @@
-[{"outputType":{"type":"APK"},"apkData":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"0.2.7","enabled":true,"outputFile":"PsychEngine-debug.apk","fullName":"debug","baseName":"debug"},"path":"PsychEngine-debug.apk","properties":{}}]
