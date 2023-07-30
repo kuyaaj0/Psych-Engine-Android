@@ -59,7 +59,7 @@ jobs:
           haxelib install hxjsonast
           haxelib install hscript
           haxelib install extension-webview
-          haxelib remove hxvm-luajit
+          
           haxelib run lime rebuild extension-webm android
 
           haxelib git linc_luajit https://github.com/MasterEric/linc_luajit.git
