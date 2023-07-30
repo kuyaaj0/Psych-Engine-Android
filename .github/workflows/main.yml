@@ -50,7 +50,7 @@ jobs:
           haxelib install hxcpp 4.2.1 > /dev/null
           haxelib install lime 7.9.0
           haxelib install openfl 9.1.0
-          haxelib install extension-webview 1.2.4 
+          haxelib install extension-webview 1.2.4
           haxelib --never install flixel 4.11.0
           haxelib run lime setup flixel
           haxelib install flixel-tools
