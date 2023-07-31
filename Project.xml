@@ -2,10 +2,13 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin': Psych Engine" file="PsychEngine" packageName="com.shadowmario.psychengine" package="com.shadowmario.psychengine" main="Main" version="0.2.7" company="ShadowMario" />
+	<app title="Friday Night Funkin' HD: Psych Engine Port" file="FunkinHDPsychEngine" packageName="com.nunofilipestudios.fnfhdpsychengineport" package="com.nunofilipestudios.fnfhdpsychengineport" main="Main" version="0.2.8" company="NunoFilipeStudios" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
+
+	<!-- NOTE TO SELF: DISABLE THIS IF ISSUES ARE FOUND -->
+	<haxedef name="LINC_LUA_RELATIVE_DYNAMIC_LIB"/> <!-- stable luas PUT AFTER FIRST LINE WITH APP NAME AND ETC -->
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
@@ -39,57 +42,63 @@
 	<set name="BUILD_DIR" value="export/32bit" if="32bits" />
 
 	<classpath name="source" />
-
-	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
-	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
 	
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
 	<define name="MODS_ALLOWED" if="desktop || android" />
-	<define name="LUA_ALLOWED" if="windows || android" />
+	<define name="LUA_ALLOWED" if="desktop || android" />
 	<define name="ACHIEVEMENTS_ALLOWED" />
-	<define name="VIDEOS_ALLOWED" if="web || windows" unless="32bits" />
-	<define name="mobileC" if="mobile" />
+	<define name="VIDEOS_ALLOWED" if="web || windows || android" unless="32bits"/>
+	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS/DEV NAMES ON TITLE SCREEN -->
+	<define name="TITLE_SCREEN_EASTER_EGG"/> <!-- Add if="officialBuild" for disabling this on an unofficial build -->
+	<define name="CRASH_HANDLER" if="desktop || android" />
+	
 
-	<!-- DONT ENABLE THIS -->
-	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>
+	<assets path="assets/preload/images/androidcontrols" if="android"/> <!-- to not have the android assets in another builds -saw -->
+
+	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
+	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
+	<section if="TITLE_SCREEN_EASTER_EGG">
+		<assets path="assets/secrets" rename="assets" exclude="*.ogg" if="web"/>
+		<assets path="assets/secrets" rename="assets" exclude="*.mp3"  unless="web"/>
+	</section>
+
+	<!-- CHECKS FOR THE PORT'S VERSION NOT THE ENGINE'S -->
+	<define name="CHECK_FOR_UPDATES"/> <!-- Add if="officialBuild" to disable this on an unofficial build -->
 
 	<!-- <define name="PRELOAD_ALL" /> -->
 	<define name="PRELOAD_ALL" unless="web" />
 	<define name="NO_PRELOAD_ALL" unless="PRELOAD_ALL"/>
-	<library name="videos"        preload="true"/>
+	
+	<library name="videos"        preload="true" />
 	<section if="PRELOAD_ALL">
 		<library name="songs"         preload="true" />
 		<library name="shared"        preload="true" />
-		<library name="tutorial"      preload="true" />
-		<library name="week1"         preload="true" />
 		<library name="week2"         preload="true" />
 		<library name="week3"         preload="true" />
 		<library name="week4"         preload="true" />
 		<library name="week5"         preload="true" />
 		<library name="week6"         preload="true" />
+		<library name="week7"         preload="true" />
+		<library name="dialogue"      preload="true" />
 	</section>
 	
 	<section if="NO_PRELOAD_ALL">
-		<library name="songs"         preload="false" />
+		<library name="songs"         preload="true" />
 		<library name="shared"        preload="false" />
-		<library name="tutorial"      preload="false" />
-		<library name="week1"         preload="false" />
 		<library name="week2"         preload="false" />
 		<library name="week3"         preload="false" />
 		<library name="week4"         preload="false" />
 		<library name="week5"         preload="false" />
 		<library name="week6"         preload="false" />
+		<library name="week7"         preload="false" />
+		<library name="dialogue"      preload="false" />
 	</section>
-	
-	<assets path="assets/videos"        library="videos"/>
+
+	<assets path="assets/videos"        library="videos"        if="VIDEOS_ALLOWED"/>
 	<assets path="assets/songs"         library="songs"         exclude="*.ogg" if="web"/>
 	<assets path="assets/songs"         library="songs"         exclude="*.mp3" unless="web"/>
 	<assets path="assets/shared"        library="shared"        exclude="*.ogg" if="web"/>
 	<assets path="assets/shared"        library="shared"        exclude="*.mp3" unless="web"/>
-	<assets path="assets/tutorial"      library="tutorial"      exclude="*.ogg" if="web"/>
-	<assets path="assets/tutorial"      library="tutorial"      exclude="*.mp3" unless="web"/>
-	<assets path="assets/week1"         library="week1"         exclude="*.ogg" if="web"/>
-	<assets path="assets/week1"         library="week1"         exclude="*.mp3" unless="web"/>
 	<assets path="assets/week2"         library="week2"         exclude="*.ogg" if="web"/>
 	<assets path="assets/week2"         library="week2"         exclude="*.mp3" unless="web"/>
 	<assets path="assets/week3"         library="week3"         exclude="*.ogg" if="web"/>
@@ -100,9 +109,14 @@
 	<assets path="assets/week5"         library="week5"         exclude="*.mp3" unless="web"/>
 	<assets path="assets/week6"         library="week6"         exclude="*.ogg" if="web"/>
 	<assets path="assets/week6"         library="week6"         exclude="*.mp3" unless="web"/>
+	<assets path="assets/week7"         library="week7"         exclude="*.ogg" if="web"/>
+	<assets path="assets/week7"         library="week7"         exclude="*.mp3" unless="web"/>
+	<assets path="assets/dialogue"      library="dialogue"      exclude="*.ogg" if="web"/>
+	<assets path="assets/dialogue"      library="dialogue"      exclude="*.mp3" unless="web"/>
 	
-	<assets path="assets/shared/images/hitbox" if="mobileC" />
-	<assets path='example_mods' rename='mods' embed='false' if="MODS_ALLOWED" />
+	<section if="MODS_ALLOWED">
+		<assets path='example_mods' rename='mods' embed='false'/>
+	</section>
 	<assets path='art/readme.txt' rename='do NOT readme.txt' />
 	<!-- <template path='mods' /> -->
 	
@@ -113,7 +127,7 @@
 		THEN UHHH I USED THE NAME OF THE FONT WITH SETFORMAT() ON THE TEXT!!!
 		NOT USING A DIRECT THING TO THE ASSET!!!
 	-->
-	<assets path="assets/fonts" embed='true'/>
+	<assets path="assets/fonts"/>
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />
@@ -122,19 +136,19 @@
 	<!--In case you want to use the addons package-->
 	<haxelib name="flixel-addons" />
 	<haxelib name="hscript" />
-
-	<!-- Extension Webm -->
-	<haxelib name="actuate" />
-	<haxelib name="extension-webview"/>
+	<define name="hscriptPos" />
 
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
-	<haxelib name="linc_luajit" />
+	<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
+	<haxelib name="hxCodec" if="VIDEOS_ALLOWED"/>
 	<haxelib name="faxe" if='switch'/>
+	<!--<haxelib name="polymod"/> -->
 	<haxelib name="discord_rpc" if="desktop"/>
-	<haxelib name="hxvm-luajit"/>
+	<haxelib name="extension-androidtools" if="android"/>
 
-	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
+	<!-- Enables a terminal log prompt on debug builds -->
+	<haxelib name="hxcpp-debug-server" if="debug"/>
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->
@@ -143,8 +157,6 @@
 	<!--<haxelib name="nape-haxe4" />-->
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
-
-	<haxedef name="LINC_LUA_RELATIVE_DYNAMIC_LIB" />
 
 	<!--Enable the Flixel core recording system-->
 	<!--<haxedef name="FLX_RECORD" />-->
@@ -156,8 +168,8 @@
 	<!--<haxedef name="FLX_NO_NATIVE_CURSOR" />-->
 
 	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
-	<!-- <haxedef name="FLX_NO_MOUSE" if="mobile" /> -->
-	<!-- <haxedef name="FLX_NO_KEYBOARD" if="mobile" /> -->
+	<!-- <haxedef name="FLX_NO_MOUSE" if="android" /> -->
+	<!-- <haxedef name="FLX_NO_KEYBOARD" if="android" /> -->
 	<!-- <haxedef name="FLX_NO_TOUCH" if="desktop" /> -->
 	<!--<haxedef name="FLX_NO_GAMEPAD" />-->
 
@@ -169,12 +181,24 @@
 
 	<!--Disable the Flixel core focus lost screen-->
 	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
-
+	
 	<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
 
 	<!--Enable this for Nape release builds for a serious peformance improvement-->
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
+
+	<!-- make's game use less ram -->
+	<!--haxedef name="HXCPP_GC_BIG_BLOCKS"/ -->
+	
+	<!-- Android stuff: thanks Yoshi Engine -->
+	<android permission="android.permission.ACCESS_NETWORK_STATE"/>
+	<android permission="android.permission.INTERNET"/>
+	<android permission="android.permission.VIBRATE"/>
+	<android permission="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<android permission="android.permission.READ_EXTERNAL_STORAGE"/>
+	<config:android gradle-version="7.5.1" />
+	<config:android gradle-plugin="7.3.1" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
