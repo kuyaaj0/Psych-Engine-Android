@@ -61,7 +61,8 @@ import FunkinLua;
 import DialogueBoxPsych;
 import Shaders;
 import DynamicShaderHandler;
-if !flash 
+
+#if flash 
 import flixel.addons.display.FlxRuntimeShader;
 import openfl.filters.ShaderFilter;
 #end
