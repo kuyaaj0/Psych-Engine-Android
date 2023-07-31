@@ -15,11 +15,6 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 
-
-#if windows
-import Discord.DiscordClient;
-#end
-
 class SoundTestMenu extends MusicBeatState
 {
 	var woahmanstopspammin:Bool = true;
