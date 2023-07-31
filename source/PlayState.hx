@@ -1294,12 +1294,6 @@ class PlayState extends MusicBeatState
 		iconP2.visible = !ClientPrefs.hideHud;
 		iconP2.alpha = ClientPrefs.healthBarAlpha;
 		add(iconP2);
-		reloadHealthBarColors();
-
-		watermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " - " + storyDifficultyText, 32); //x, y, fieldWidth, text, size
-		watermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
-		watermark.scrollFactor.set();
-		add(watermark);
 
 		if (ClientPrefs.downScroll)
 			watermark.y = FlxG.height * 0.9 + 45;
