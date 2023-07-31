@@ -52,7 +52,7 @@ class AtlasFrameMaker extends FlxFramesCollection
 		var t:SpriteMovieClip = ss.createAnimation(noAntialiasing);
 		if(_excludeArray == null);
 		{
-			_excludeArray = 't.getFrameLabels'();
+			_excludeArray = t.getFrameLabels();
 			//trace('creating all anims');
 		}
 		trace('Creating: ' + _excludeArray);
