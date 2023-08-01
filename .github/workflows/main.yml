@@ -58,8 +58,8 @@ jobs:
           haxelib install tjson
           haxelib install hxjsonast
           haxelib install extension-webview
-          haxelib install openfl-webm
-          haxelib git openfl-webm https://github.com/HaxeExtension/extension-webm
+          haxelib install extension-webm
+          haxelib git extension-webm https://github.com/HaxeExtension/extension-webm
           haxelib git extension-webview https://github.com/HaxeExtension/extension-webview
           haxelib git linc_luajit https://github.com/AndreiRudenko/linc_luajit
           haxelib install hscript
