@@ -263,7 +263,7 @@ jobs:
 
         run: |
 
-          haxelib run lime setup android
+          
 
           haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
 
