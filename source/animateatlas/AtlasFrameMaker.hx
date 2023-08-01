@@ -15,8 +15,11 @@ import flixel.graphics.frames.FlxFramesCollection;
 import flixel.graphics.frames.FlxFrame;
 
 #if android
-import SUtil.getStorageDirectory()
-import SUtil.checkFiles()
+import sys.FileSystem;
+import sys.io.File;
+#else
+import js.html.FileSystem;
+import js.html.File;
 #end
 
 using StringTools;
