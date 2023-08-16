@@ -33,12 +33,12 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 	{
 		title = 'Gameplay Settings';
 		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
-
+		
 		var option:Option = new Option('Controller Mode',
 			'Check this if you want to play with\na controller instead of using your Keyboard.',
 			'controllerMode',
 			'bool',
-			#if android true #else false #end);
+			false);
 		addOption(option);
 
 		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
@@ -70,17 +70,30 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			false);
 		addOption(option);
 
-		var option:Option = new Option('Hitsound Volume',
-			'Funny notes does \"Tick!\" when you hit them."',
-			'hitsoundVolume',
-			'percent',
-			0);
+		var option:Option = new Option('Camera Follow Position',
+			"If checked, every note direction equals camera offset.",
+			'cameraFollow',
+			'bool',
+			true);
 		addOption(option);
-		option.scrollSpeed = 1.6;
-		option.minValue = 0.0;
-		option.maxValue = 1;
-		option.changeValue = 0.1;
-		option.decimals = 1;
+
+		var option:Option = new Option('Show Ratings',
+			"If checked, Shows original ratings. Else it will show just the score like in the corruption mod.",
+			'showRating',
+			'bool',
+			false);
+		addOption(option);
+
+		/*var option:Option = new Option('Note Delay',
+			'Changes how late a note is spawned.\nUseful for preventing audio lag from wireless earphones.',
+			'noteOffset',
+			'int',
+			0);
+		option.displayFormat = '%vms';
+		option.scrollSpeed = 100;
+		option.minValue = 0;
+		option.maxValue = 500;
+		addOption(option);*/
 
 		var option:Option = new Option('Rating Offset',
 			'Changes how late/early you have to hit for a "Sick!"\nHigher values mean you have to hit later.',
@@ -136,6 +149,14 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.maxValue = 10;
 		option.changeValue = 0.1;
 		addOption(option);
+
+		var option:Option = new Option('Developer Mode',
+		'Only if you work on it!!!!.',
+		'developerMode',
+		'bool',
+		false);
+	addOption(option);
+
 
 		super();
 	}

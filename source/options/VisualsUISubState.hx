@@ -34,6 +34,16 @@ class VisualsUISubState extends BaseOptionsMenu
 		title = 'Visuals and UI';
 		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
 
+		var option:Option = new Option('Note Skin:',
+			"Funny notes dropping down, how should they look like? \n NOTE: Set the notes to default when changing note texture in json!! (referring Infernum and vexation)",
+			'noteSkin',
+			'string',
+			'Default',
+			['Default', 'Future', 'Chip']);
+		option.showNotes = true;
+		option.onChange = onChangeNoteSkin;
+		addOption(option);
+
 		var option:Option = new Option('Note Splashes',
 			"If unchecked, hitting \"Sick!\" notes won't show particles.",
 			'noteSplashes',
@@ -59,13 +69,6 @@ class VisualsUISubState extends BaseOptionsMenu
 		var option:Option = new Option('Flashing Lights',
 			"Uncheck this if you're sensitive to flashing lights!",
 			'flashing',
-			'bool',
-			true);
-		addOption(option);
-		
-		var option:Option = new Option('Kade Watermark',
-			"If unchecked, Add Watermark Like Kade (check this if you play on a custom lua ui for a better experience)",
-			'kadeEngineWatermark',
 			'bool',
 			true);
 		addOption(option);
@@ -96,46 +99,29 @@ class VisualsUISubState extends BaseOptionsMenu
 		option.decimals = 1;
 		addOption(option);
 		
+		#if !mobile
 		var option:Option = new Option('FPS Counter',
 			'If unchecked, hides FPS Counter.',
 			'showFPS',
 			'bool',
-			#if android false #else true #end);
+			true);
 		addOption(option);
 		option.onChange = onChangeFPSCounter;
-		
-		var option:Option = new Option('Pause Screen Song:',
-			"What song do you prefer for the Pause Screen?",
-			'pauseMusic',
-			'string',
-			'Tea Time',
-			['None', 'Breakfast', 'Tea Time']);
-		addOption(option);
-		option.onChange = onChangePauseMusic;
+		#end
 
 		super();
 	}
 
-	var changedMusic:Bool = false;
-	function onChangePauseMusic()
+	function onChangeNoteSkin()
 	{
-		if(ClientPrefs.pauseMusic == 'None')
-			FlxG.sound.music.volume = 0;
-		else
-			FlxG.sound.playMusic(Paths.music(Paths.formatToSongPath(ClientPrefs.pauseMusic)));
-
-		changedMusic = true;
+		updateNotes();
 	}
 
-	override function destroy()
-	{
-		if(changedMusic) FlxG.sound.playMusic(Paths.music('freakyMenu'));
-		super.destroy();
-	}
-
+	#if !mobile
 	function onChangeFPSCounter()
 	{
 		if(Main.fpsVar != null)
 			Main.fpsVar.visible = ClientPrefs.showFPS;
 	}
+	#end
 }

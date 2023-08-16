@@ -8,7 +8,6 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.addons.transition.FlxTransitionableState;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
@@ -72,12 +71,31 @@ class ControlsSubState extends MusicBeatSubstate {
 	public function new() {
 		super();
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		bg.color = 0xFFea71fd;
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('optionsBack'));
+		//bg.color = 0xFFea71fd;
+		bg.setGraphicSize(Std.int(bg.width * 1.1));
+		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
+		var glitch:FlxSprite = new FlxSprite().loadGraphic(Paths.image('optionsGlitch'));
+		//glitch.color = 0xFFea71fd;
+		glitch.setGraphicSize(Std.int(glitch.width * 1.1));
+		glitch.updateHitbox();
+		glitch.screenCenter();
+		glitch.antialiasing = ClientPrefs.globalAntialiasing;
+		add(glitch);
+
+		var front:FlxSprite = new FlxSprite().loadGraphic(Paths.image('optionsFront'));
+		//front.color = 0xFFea71fd;
+		front.setGraphicSize(Std.int(front.width * 1.1));
+		front.updateHitbox();
+		front.screenCenter();
+		front.antialiasing = ClientPrefs.globalAntialiasing;
+		front.alpha = 1;
+
+		add(front);
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
 
@@ -111,10 +129,6 @@ class ControlsSubState extends MusicBeatSubstate {
 			}
 		}
 		changeSelection();
-
-                #if android
-                addVirtualPad(FULL, A_B);
-                #end
 	}
 
 	var leaving:Bool = false;
@@ -133,12 +147,7 @@ class ControlsSubState extends MusicBeatSubstate {
 
 			if (controls.BACK) {
 				ClientPrefs.reloadControls();
-			        #if android
-                                FlxTransitionableState.skipNextTransOut = true;
-			        FlxG.resetState();
-                                #else
-                                close();
-                                #end
+				close();
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 			}
 

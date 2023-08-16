@@ -8,7 +8,6 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.addons.transition.FlxTransitionableState;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
@@ -41,6 +40,9 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	private var boyfriend:Character = null;
 	private var descBox:FlxSprite;
 	private var descText:FlxText;
+	private var previewNotes:AttachedSprite;
+
+	private var previewNoteOption:Option;
 
 	public var title:String;
 	public var rpcTitle:String;
@@ -56,11 +58,30 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		DiscordClient.changePresence(rpcTitle, null);
 		#end
 		
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		bg.color = 0xFFea71fd;
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('optionsBack'));
+		//bg.color = 0xFFea71fd;
+		bg.setGraphicSize(Std.int(bg.width * 1.1));
+		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
+
+		var glitch:FlxSprite = new FlxSprite().loadGraphic(Paths.image('optionsGlitch'));
+		//glitch.color = 0xFFea71fd;
+		glitch.setGraphicSize(Std.int(glitch.width * 1.1));
+		glitch.updateHitbox();
+		glitch.screenCenter();
+		glitch.antialiasing = ClientPrefs.globalAntialiasing;
+		add(glitch);
+
+		var front:FlxSprite = new FlxSprite().loadGraphic(Paths.image('optionsFront'));
+		//front.color = 0xFFea71fd;
+		front.setGraphicSize(Std.int(front.width * 1.1));
+		front.updateHitbox();
+		front.screenCenter();
+		front.antialiasing = ClientPrefs.globalAntialiasing;
+		front.alpha = 1;
+		add(front);
 
 		// avoids lagspikes while scrolling through menus!
 		grpOptions = new FlxTypedGroup<Alphabet>();
@@ -99,6 +120,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			optionText.targetY = i;
 			grpOptions.add(optionText);
 
+			var textChild:AttachedText = null;
 			if(optionsArray[i].type == 'bool') {
 				var checkbox:CheckboxThingie = new CheckboxThingie(optionText.x - 105, optionText.y, optionsArray[i].getValue() == true);
 				checkbox.sprTracker = optionText;
@@ -107,27 +129,51 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			} else {
 				optionText.x -= 80;
 				optionText.xAdd -= 80;
-				var valueText:AttachedText = new AttachedText('' + optionsArray[i].getValue(), optionText.width + 80);
-				valueText.sprTracker = optionText;
-				valueText.copyAlpha = true;
-				valueText.ID = i;
-				grpTexts.add(valueText);
-				optionsArray[i].setChild(valueText);
+				textChild = new AttachedText('' + optionsArray[i].getValue(), optionText.width + 80);
+				textChild.sprTracker = optionText;
+				textChild.copyAlpha = true;
+				textChild.ID = i;
+				grpTexts.add(textChild);
+				optionsArray[i].setChild(textChild);
 			}
 
 			if(optionsArray[i].showBoyfriend && boyfriend == null)
 			{
 				reloadBoyfriend();
 			}
+			if(optionsArray[i].showNotes && previewNotes == null)
+			{
+				var colorSwap:ColorSwap = new ColorSwap();
+				colorSwap.hue = ClientPrefs.arrowHSV[2][0] / 360;
+				colorSwap.saturation = ClientPrefs.arrowHSV[2][1] / 100;
+				colorSwap.brightness = ClientPrefs.arrowHSV[2][2] / 100;
+	
+				previewNotes = new AttachedSprite();
+				previewNotes.loadGraphic(Paths.image('previewNotes'), true, 164, 164);
+				previewNotes.shader = colorSwap.shader;
+				previewNotes.animation.add('frames', [0, 1, 2], 0);
+				previewNotes.animation.play('frames');
+				previewNotes.sprTracker = textChild;
+				previewNoteOption = optionsArray[i];
+				previewNotes.setGraphicSize(Std.int(previewNotes.width * 0.7));
+				previewNotes.updateHitbox();
+				previewNotes.yAdd = 20;
+				add(previewNotes);
+				updateNotes();
+			}
 			updateTextFrom(optionsArray[i]);
 		}
 
+
+
 		changeSelection();
 		reloadCheckboxes();
+	}
 
-                #if android
-                addVirtualPad(FULL, A_B_C);
-                #end
+	public function updateNotes()
+	{
+		previewNotes.animation.curAnim.curFrame = previewNoteOption.curOption;
+		previewNotes.xAdd = previewNotes.sprTracker.width + 20;
 	}
 
 	public function addOption(option:Option) {
@@ -150,12 +196,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		}
 
 		if (controls.BACK) {
-			#if android
-                        FlxTransitionableState.skipNextTransOut = true;
-			FlxG.resetState();
-                        #else
-                        close();
-                        #end
+			close();
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 		}
 
@@ -248,7 +289,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 				}
 			}
 
-			if(controls.RESET #if android || _virtualpad.buttonC.justPressed #end)
+			if(controls.RESET)
 			{
 				for (i in 0...optionsArray.length)
 				{
