@@ -1664,15 +1664,29 @@ class PlayState extends MusicBeatState
 					startCharacterPos(newBoyfriend);
 					newBoyfriend.alpha = 0.00001;
 					startCharacterLua(newBoyfriend.curCharacter);
-					luaFile = SUtil.getPath() + Paths.getPreloadPath(luaFile);
-			if(FileSystem.exists(luaFile)) {
-				doPush = true;
-			}
-		}
+				}
 
-		if(doPush) 
-			luaArray.push(new FunkinLua(luaFile));
-		#end }
+			case 1:
+				if(!dadMap.exists(newCharacter)) {
+					var newDad:Character = new Character(0, 0, newCharacter);
+					dadMap.set(newCharacter, newDad);
+					dadGroup.add(newDad);
+					startCharacterPos(newDad, true);
+					newDad.alpha = 0.00001;
+					startCharacterLua(newDad.curCharacter);
+				}
+
+			case 2:
+				if(gf != null && !gfMap.exists(newCharacter)) {
+					var newGf:Character = new Character(0, 0, newCharacter);
+					newGf.scrollFactor.set(0.95, 0.95);
+					gfMap.set(newCharacter, newGf);
+					gfGroup.add(newGf);
+					startCharacterPos(newGf);
+					newGf.alpha = 0.00001;
+					startCharacterLua(newGf.curCharacter);
+				}
+		}
 	}
 
   public function addShaderToCamera(cam:String,effect:Dynamic){//STOLE FROM ANDROMEDA
@@ -3044,7 +3058,7 @@ class PlayState extends MusicBeatState
 	var stun:Bool = false;
 	var finished:Bool = false;
 	var counter:Int = 0;
-
+	}
 	override public function update(elapsed:Float)
 	{
 		if (FlxG.keys.justPressed.NINE)
