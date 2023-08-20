@@ -3074,8 +3074,6 @@ class PlayState extends MusicBeatState
 				jumpscare.visible = false;
 			}
 		}
-	}
-}
 
 		if(SONG.song.toLowerCase() == 'infernum' || SONG.song.toLowerCase() == 'vexation' 
 			|| SONG.song.toLowerCase() == 'infernum-hell' || SONG.song.toLowerCase() == 'vexation-hell')
