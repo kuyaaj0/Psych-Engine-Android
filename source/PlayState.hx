@@ -3058,8 +3058,9 @@ class PlayState extends MusicBeatState
 	var stun:Bool = false;
 	var finished:Bool = false;
 	var counter:Int = 0;
-	}
-	override public function update(elapsed:Float)
+
+	{
+	override public function update(elapsed:Float) 
 	{
 		if (FlxG.keys.justPressed.NINE)
 		{
@@ -3073,6 +3074,8 @@ class PlayState extends MusicBeatState
 				jumpscare.visible = false;
 			}
 		}
+	}
+}
 
 		if(SONG.song.toLowerCase() == 'infernum' || SONG.song.toLowerCase() == 'vexation' 
 			|| SONG.song.toLowerCase() == 'infernum-hell' || SONG.song.toLowerCase() == 'vexation-hell')
@@ -3398,7 +3401,7 @@ class PlayState extends MusicBeatState
 
 
 			}
-		); }
+		}
 
 		if (generatedMusic)
 		{
@@ -3530,7 +3533,6 @@ class PlayState extends MusicBeatState
 				}
 			});
 		}
-	}
 		checkEventNote();
 		
 		#if debug
@@ -3550,23 +3552,6 @@ class PlayState extends MusicBeatState
 		setOnLuas('cameraY', camFollowPos.y);
 		setOnLuas('botPlay', cpuControlled);
 		callOnLuas('onUpdatePost', [elapsed]);
-	}
-
-		for (shader in animatedShaders)
-		{
-			shader.update(elapsed);
-		}
-		#if LUA_ALLOWED
-		
-for (key => value in luaShaders)
-{
-	value.update(elapsed);
-}
-#end
-
-		for (i in shaderUpdates){
-			i(elapsed);
-		}
 	}
 
 	function openChartEditor()
