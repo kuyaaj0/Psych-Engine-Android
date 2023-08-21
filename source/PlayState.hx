@@ -3082,7 +3082,7 @@ class PlayState extends MusicBeatState
 			|| SONG.song.toLowerCase() == 'infernum-hell' || SONG.song.toLowerCase() == 'vexation-hell'); }
 		}*/
 
-		if (dad.curCharacter.startsWith('WhittyCrazyV2'))
+		/*if (dad.curCharacter.startsWith('WhittyCrazyV2')) {
 			circ.alpha = 0.7;
 
 		if (stun && counter == 0 && FlxG.keys.justPressed.SPACE){
@@ -3096,6 +3096,7 @@ class PlayState extends MusicBeatState
 			// gf.visible = false;
 		if(camEmitt)
 			emitt();
+		}
 		
 		switch (curStage)
 		{
