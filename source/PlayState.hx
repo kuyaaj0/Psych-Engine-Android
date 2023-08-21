@@ -3098,14 +3098,14 @@ class PlayState extends MusicBeatState
 			emitt();
 		}*/
 		
-		switch (curStage) {
+		switch (curStage) /*{
 		{
 			case 'CrazyCorruptionAlley' | 'CrazyVexationAlley':
 
 				if(ClientPrefs.flashing)
 					effect.alpha = health / 1.5;
 		}
-		}
+		}*/
 
 		switch (curStage)
 		{
