@@ -3111,6 +3111,7 @@ class PlayState extends MusicBeatState
 	}
 }*/
 }
+/*{
 		switch (curStage)
 		{
 			case 'CrazyVexationAlley':
@@ -3118,6 +3119,7 @@ class PlayState extends MusicBeatState
 				FlxG.camera.shake(0.005, songLength);
 				camHUD.shake(0.001, songLength);
 		}
+}*/
 
 		if(!inCutscene) {
 			var lerpVal:Float = CoolUtil.boundTo(elapsed * 2.4 * cameraSpeed * playbackRate, 0, 1);
