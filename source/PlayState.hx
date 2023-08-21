@@ -3096,7 +3096,7 @@ class PlayState extends MusicBeatState
 			// gf.visible = false;
 		if(camEmitt)
 			emitt();
-		}
+		}*/
 		
 		switch (curStage)
 		{
@@ -3155,13 +3155,14 @@ class PlayState extends MusicBeatState
 					cancelMusicFadeTween();
 					MusicBeatState.switchState(new GitarooPause());
 				}
-				else {*/
+				else */{/*
 				if(FlxG.sound.music != null) {
 					FlxG.sound.music.pause();
 					vocals.pause();
 				}
-				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
-				//}
+				{
+				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y)); }
+				//}*/
 		
 				#if desktop
 				DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
