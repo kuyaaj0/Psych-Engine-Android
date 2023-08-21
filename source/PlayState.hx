@@ -3074,10 +3074,10 @@ class PlayState extends MusicBeatState
 			}
 		}*/
 
-		{
+		/*{
 		if (SONG.song.toLowerCase() == 'infernum' || SONG.song.toLowerCase() == 'vexation' 
 			|| SONG.song.toLowerCase() == 'infernum-hell' || SONG.song.toLowerCase() == 'vexation-hell');
-		}
+		}*/
 
 		if (dad.curCharacter.startsWith('WhittyCrazyV2'))
 			circ.alpha = 0.7;
