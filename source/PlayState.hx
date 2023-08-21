@@ -3136,13 +3136,14 @@ class PlayState extends MusicBeatState
 				boyfriendIdleTime = 0;
 			}*/
 
-		super.update(elapsed);
+		/*super.update(elapsed); {
 
 			if(ratingName == '?') {
 				scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName;
 			} else {
 				scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
 		}
+		}*/
 
 		if(botplayTxt.visible) {
 			botplaySine += 180 * elapsed;
