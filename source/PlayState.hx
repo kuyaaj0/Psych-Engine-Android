@@ -3061,20 +3061,18 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float) {
 
-		if (FlxG.keys.justPressed.NINE)
-		{
+		/*if (FlxG.keys.justPressed.NINE) {
+
 			iconP1.swapOldIcon();
 		}
 
-		if (curStage == 'shitty')
-		{
-			if(FlxG.keys.justPressed.SPACE) {
+		if (curStage == 'shitty') {
+
+			if(FlxG.keys.justPressed.SPACE)
 				remove(jumpscare);
 				jumpscare.visible = false;
-			}
+			}*/
 		}
-	}
-
 
 		if(SONG.song.toLowerCase() == 'infernum' || SONG.song.toLowerCase() == 'vexation' 
 			|| SONG.song.toLowerCase() == 'infernum-hell' || SONG.song.toLowerCase() == 'vexation-hell')
