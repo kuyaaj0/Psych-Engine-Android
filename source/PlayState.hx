@@ -3097,8 +3097,9 @@ class PlayState extends MusicBeatState
 		if(camEmitt)
 			emitt();
 		}*/
-		{
-		switch (curStage) /*{
+
+		/*{
+		switch (curStage) {
 		{
 			case 'CrazyCorruptionAlley' | 'CrazyVexationAlley':
 
