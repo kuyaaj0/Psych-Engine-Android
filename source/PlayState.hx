@@ -3120,8 +3120,8 @@ class PlayState extends MusicBeatState
 				camHUD.shake(0.001, songLength);
 		}
 }*/
-{
-		    if(?inCutscene)
+
+		    if(?inCutscene) {
 	{
 			var lerpVal:Float = CoolUtil.boundTo(elapsed * 2.4 * cameraSpeed * playbackRate, 0, 1);
 			camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
