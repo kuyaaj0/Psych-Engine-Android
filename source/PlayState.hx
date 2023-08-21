@@ -3097,7 +3097,7 @@ class PlayState extends MusicBeatState
 		if(camEmitt)
 			emitt();
 		}*/
-		
+		{
 		switch (curStage) /*{
 		{
 			case 'CrazyCorruptionAlley' | 'CrazyVexationAlley':
@@ -3107,9 +3107,9 @@ class PlayState extends MusicBeatState
 				if(ClientPrefs.flashing)
 					effect.alpha = health / 1.5;
 		}
-		}
-		}*/
-
+	}
+}*/
+}
 		switch (curStage)
 		{
 			case 'CrazyVexationAlley':
