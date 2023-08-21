@@ -2994,6 +2994,7 @@ class PlayState extends MusicBeatState
 		}*/
 
 		callOnLuas('onUpdate', [elapsed]);
+	}
 
 
 	function grabBF()
