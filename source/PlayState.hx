@@ -3102,8 +3102,11 @@ class PlayState extends MusicBeatState
 		{
 			case 'CrazyCorruptionAlley' | 'CrazyVexationAlley':
 
+			{
+
 				if(ClientPrefs.flashing)
 					effect.alpha = health / 1.5;
+		}
 		}
 		}*/
 
