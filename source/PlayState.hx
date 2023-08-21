@@ -3145,10 +3145,10 @@ class PlayState extends MusicBeatState
 		}
 		}*/
 
-		if(botplayTxt.visible) {
+		/*if (botplayTxt.visible) {
 			botplaySine += 180 * elapsed;
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
-		}
+		}*/
 
 		if (controls.PAUSE #if android || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
 		{
