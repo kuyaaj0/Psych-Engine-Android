@@ -3121,7 +3121,7 @@ class PlayState extends MusicBeatState
 		}
 }*/
 
-		    if(!inCutscene);
+		    /*if(!inCutscene);
 	{
 			var lerpVal:Float = CoolUtil.boundTo(elapsed * 2.4 * cameraSpeed * playbackRate, 0, 1);
 			camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
@@ -3134,7 +3134,7 @@ class PlayState extends MusicBeatState
 				}
 			} else {
 				boyfriendIdleTime = 0;
-			}
+			}*/
 
 		super.update(elapsed);
 
