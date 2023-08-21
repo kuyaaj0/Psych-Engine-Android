@@ -335,8 +335,6 @@ class PlayState extends MusicBeatState
 	// Less laggy controls
 	private var keysArray:Array<Dynamic>;
 
-	
-
 	override public function create()
 	{
 		Paths.clearStoredMemory();
@@ -346,6 +344,7 @@ class PlayState extends MusicBeatState
 
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
+		PauseSubState.songName = null; //Reset to default
 		playbackRate = ClientPrefs.getGameplaySetting('songspeed', 1);
 		Achievements.loadAchievements();
 
