@@ -3176,12 +3176,13 @@ class PlayState extends MusicBeatState
 				{
 				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y)); }
 				//}*/
-		
+				}
+			}
+			}
+			{
 				#if desktop
 				DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
 				#end
-			}
-		}
 			}
 
 		if (FlxG.keys.anyJustPressed(debugKeysChart) && !endingSong && !inCutscene && SONG.song.toLowerCase() != 'vexation-hell')
