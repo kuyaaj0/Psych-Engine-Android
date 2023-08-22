@@ -3151,7 +3151,8 @@ class PlayState extends MusicBeatState
 		}*/
 
 		/*if (controls.PAUSE #if android || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
-		*/{
+		*/
+		{
 			var ret:Dynamic = callOnLuas('onPause', []);
 			if(ret != FunkinLua.Function_Stop) {
 				persistentUpdate = false;
